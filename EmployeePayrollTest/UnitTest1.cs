@@ -1,4 +1,5 @@
 using EmployeePayrollUsingMultiThreadingProject;
+using Intuit.Ipp.Data;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,11 @@ namespace EmployeePayrollTest
             DateTime stopDateTimeThread = DateTime.Now;
             Console.WriteLine("Duration with thread: " + (stopDateTimeThread - startDateTimeThread));
             //Assert.AreNotEqual(v1,v2);
+           DateTime startDateTimeForSql = DateTime.Now;
+            employeePayrollOperations.Add();
+            DateTime stopDateTimeForSql = DateTime.Now;
+            Console.WriteLine ("Duration with thread implementing database of sql"+(stopDateTimeForSql - startDateTimeForSql));
+
 
         }
     }
